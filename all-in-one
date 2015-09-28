@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    h1 {
+      font-family: verdana;
+    }
+    p {
+      color: green;
+    }
+    i {
+      font-size: 300%;
+    }
+    #primary {
+      font-size: 300%
+      text-align:center;
+      font-family: 'Times New Roman';
+    }
+    .important {
+      color:orange;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="color:orange;">This is a heading<h1>
+    <p>This <i style="color:orange";>is</i> a paragraph.</p>
+    <p> This <i>is</i> a paragraph.</p>
+    <p id="primary">This is by far the most important part of the page</p>
+    <body>
+      </html>
+
+
+//next draft 
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>css demo</title>
+  <style>
+  div {
+    height: 50px;
+    margin: 5px;
+    padding: 5px;
+    float: left;
+  }
+  #box1 {
+    width: 50px;
+    color: yellow;
+    background-color: blue;
+    text-align:center;
+  }
+  #box2 {
+    width: 60px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(15, 99, 30);
+    text-align:center;
+  }
+  #box3 {
+    width: 70px;
+    color: #fcc;
+    background-color: #123456;
+    text-align:center;
+  }
+  #box4 {
+    width: 80px;
+    background-color: #f11;
+    text-align:center;
+  }
+  #box5 {
+    width: 90px;
+    background-color: orange;
+    text-align:center; 
+  }
+
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<div id="box1">H</div>
+<div id="box2">E</div>
+<div id="box3">L</div>
+<div id="box4">L</div>
+<div id="box5">O</div>
+
+</body>
+</html>
+
+
+//next draft 
+
+
+<form action="form-responses/new" method="POST">
+
+  <input type="text" name="firstname" value="default" size="100" autofocus>
+  <input type="password" name="pswd">
+  <input type="email" name="userEmail" placeholder="hello@site.com">
+
+  <input type="radio" name="weird" value="code-blue" checked><span>pick this!</span>
+  <input type="radio" name="weird" value="code-red" checked><span>or pick this</span>
+
+  <input type="checkbox" name="optin" value="trusting" checked>You agree to everything
+  <input type="checkbox" name="optout" value="skeptical" disabled>Wait, what?
+
+  <select name="car">
+    <optgroup label="Swedish Cars">
+      <option value="boring">Volvo</option>
+      <option value="cool">Honda</option>
+    </optgroup>
+  </select>
+
+  <textarea name="user_message" rows="8" cols="40"></textarea>
+  <input type="submit">
+</form>
+
+
+//next draft 
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Game</title>
+</head>
+<body>
+  <h1>Hangman Game</h1>
+  <script>
+  //Create an array of words
+  var words = [
+  "javascript",
+  "monkey",
+  "amazing",
+  "pancake"
+  ]; 
+
+  //Pick a random word
+  var word = words[Math.floor(Math.random()*words.length)];
+
+  //Set up the answer array
+  var answerArray = [];
+  for (var i=0; i < word.length;i++) {
+    answerArray[i] = "_";
+  }
+
+  var remainingLetters = word.lenght;
+
+  //The game loop
+  while (remainingLetters > 0) {
+    //Show the player's progress
+    alert(answerArray.join(" "));
+    //Get a guess from the player
+    var guess = prompt("Guess a letter, or click cancel to exit the game.");
+    if (guess === null) {
+      //Exit the game loop
+       break;
+    } else if (guess.length !== 1) {
+      alert("Please enter a single letter.");
+    } else {
+      //Update the game with a guess
+      for (var j = 0); j < word.length; j++) {
+      if (word[j] === guess) {
+        answerArray[j] = guess;
+        remainingLetters--;
+      }
+      }
+    }
+    //The end of the loop
+    }
+
+    //Show the answer and congratulate the player
+    alert(answerArray.join(" "));
+    alert("Good job! The answer was" + word);
+    </script>
+  </body>
+</html>
+
+
+//next draft 
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cars</title>
+</head>
+<body>
+  <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+  <script>
+
+  var Car = function (x, y) {
+    this.x = x;
+    this.y = y;
+  };
+
+  var drawCar = function(car) {
+    var carHtml = '<img src ="http://nostarch.com/images/car.png">';
+
+    var carElement = $(carHtml);
+
+    carElement.css({
+      position: "absolute",
+      left: car.x,
+      top: car.y
+    });
+
+    $("body").append(carElement);
+  };
+  var tesla = new Car(20, 20);
+  var audi = new Car(100, 200);
+
+  drawCar (tesla);
+  drawCar (audi);
+
+  </script>
+</body>
+</html>
+
+
+//next draft 
+
+
+<html>
+<!DOCTYPE html>
+  <head>
+  </head>
+  <body>
+    <script>
+  
+    var n = 100, song = ''
+
+    while (n>=0) {
+      if (n !==0){
+        song = song + '' + n + "bottles of beer on the wall! chug, chug, chug"
+      } else {
+        song+= "no bottles of beer! stumble, stumble, stumble..."
+      }
+      n--
+    }
+
+    document.querySelector('#lyrics').textContent = song
+    </script>
+    
+  </body>
+    </html>
+
+
+//next draft 
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script>
+jQuery(document).ready(function($) {
+  $.ajax({
+  url : "http://api.wunderground.com/api/Your_Key/geolookup/conditions/q/IA/Cedar_Rapids.json",
+  dataType : "jsonp",
+  success : function(parsed_json) {
+  var location = parsed_json['location']['city'];
+  var temp_f = parsed_json['current_observation']['temp_f'];
+  alert("Current temperature in " + location + " is: " + temp_f);
+  }
+  });
+});
+</script>
+
+
+//next draft 
+
+
+var person = {
+  name: 'Pawel',
+  location: 'SF',
+  age: 25,
+  hobbies: ['traveling', 'eating', 'running', 'gardening'],
+  work: ['software engineer'],
+  ferret: {
+    name: 'Olaf',
+    hobbies: [ 'being mischievous', 'playing' ]
+  },
+  party: function(){
+    console.log('dance! dance! dance!');
+  }
+};
+  
+person.work = function(){
+  console.log("Welcome to Google, I'm " + this.name + ". May I code your software?");
+  console.log("Would you like to hear a story about " + this.ferret.name + " and his " + this.ferret.hobbies[1]);
+};
+
+console.log(person.ferret.name);
+
+
+//next draft 
+
+
+var products = [
+        {
+          name: "Go Set a Watchman",
+          category: "books",
+          selling_points: ["Controversial", "Publicity Bonanza", "Released by rapacious publishers against the wishes of senile author"],
+          price: 25,
+          picture_url: "https://upload.wikimedia.org/wikipedia/en/4/4e/US_cover_of_Go_Set_a_Watchman.jpg"
+        },
+        {
+          name: "Twilight",
+          category: "books",
+          selling_points: ["Doesn't make you think to hard", "Reinforces traditional gender-roles", "Doesn't make you think to hard"],
+          price: 9.99,
+          picture_url: "http://image.slidesharecdn.com/book-1-twilight-1231022548425199-1/95/book-1-twilight-1-728.jpg"
+        },
+        {
+          name: "How to Win Friends & Influence People",
+          category: "books",
+          selling_points: ["Timeless practical advice", "Actually useful and relevant to your life"],
+          price: 8,
+          picture_url: "http://htmlgiant.com/wp-content/uploads/2013/11/HowtoWinFriendsandInfluencePeopleCover.jpg"
+        },
+        {
+          name: "Dark Side of the Moon",
+          category: "music",
+          selling_points: ["Collector's Edition", "Trippy", "Good for late night existential crises"],
+          price: 100,
+          picture_url: "http://i.kinja-img.com/gawker-media/image/upload/s--9N1Ijk1t--/c_fit,fl_progressive,q_80,w_636/1940ob66cyu2ljpg.jpg"
+        },
+        {
+          name: "Thriller",
+          category: "music",
+          selling_points: ["Classic MJ", "The 80's greatest contribution to human progress"],
+          price: 19,
+          picture_url: "http://cps-static.rovicorp.com/3/JPG_400/MI0000/677/MI0000677650.jpg"
+        },
+        {
+          name: "Ella & Luis",
+          category: "music",
+          selling_points: ["How could you not?", "Seriously, though..."],
+          price: 110,
+          picture_url: "http://ecx.images-amazon.com/images/I/51713fx1VdL._SY300_.jpg"
+        }
+      ];
+
+
+var books = _.filter(products, function(item){
+  return item.category === "books";
+});
+
+//console.log(books);
+
+var cheapBooks = _.filter(products, function(item){
+  var isBook = item.category === "books";
+  var isCheap = item.price < 20;
+  var isCheapBook = (isBook && isCheap)
+  return isCheapBook;
+})
+
+//console.log(cheapBooks);
+
+var cheapSellingPoints = _.map(cheapBooks, function(book) {
+  return book.selling_points;
+})
+
+var flatSelling = _.reduce(cheapSellingPoints, function (acc, el){
+  return acc.concat(el);
+}, []);
+    
+//console.log(flatSelling);
+    
+    
+  var cheapBooks = _.filter(products, function(item){
+  var isBook = item.category === "books";
+  var isCheap = item.price < 20;
+  var isCheapBook = (isBook && isCheap)
+  return isCheapBook;
+})
+
+var expensiveBooks = _.reject(books, function(item){
+  var isCheap = item.price < 20;
+  var isCheapBook = (isCheap)
+  return isCheapBook;
+})
+
+//console.log(expensiveBooks)
+
+
+var tooManyBooks = books.concat(books)
+
+//console.log(_.uniq(tooManyBooks))
+
+//console.log(_.pluck(products, 'name'))
+
+//console.log(_.extend({value: 2},{foo: 'bar'}))
+
+var newProducts = _.map(products, function(product) {
+  return _.extend(product, {selling_points: _.uniq(product.selling_points)})
+})
+
+// console.log(newProducts)
+
+var hasTwilight = _.contains(_.pluck(products, 'name'), 'Twilight')
+console.log(hasTwilight)
+
+var total = _.reduce(products, function (total, item) {
+  return item.price + total;
+}, 0)
+
+console.log(total)
